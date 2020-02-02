@@ -15,9 +15,14 @@
     "@commitlint/config-conventional": "^8.3.4",
     "@testing-library/react-hooks": "^3.2.1",
     "@types/jest": "^25.1.1",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
     "babel-jest": "^25.1.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.18.2",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.1",
@@ -46,7 +51,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,ts}": [
-      "eslint ./src --fix",
+      "eslint ./src --fix --ext .js,.ts",
       "git add"
     ]
   },

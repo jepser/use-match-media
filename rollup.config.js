@@ -10,8 +10,8 @@ import pkg from './package.json'
 const isDev = !!process.env.ROLLUP_WATCH
 
 const extensions = [
-  '.js', '.jsx', '.ts', '.tsx',
-];
+  '.js', '.jsx', '.ts', '.tsx'
+]
 
 const commonJsConfig = {
   include: 'node_modules/**',
