@@ -8,7 +8,7 @@ function useMatchMedia (queries: Array<string>, defaultValues = []): Array<boole
   if (typeof window === 'undefined') return initialValues
 
   const mediaQueryLists = queries.map(q => window.matchMedia(q))
-  const getValue = () => {
+  const getValue = (): Array<boolean> => {
     // Return the value for the given queries
     const matchedQueries = mediaQueryLists.map(mql => mql.matches)
 
@@ -22,11 +22,11 @@ function useMatchMedia (queries: Array<string>, defaultValues = []): Array<boole
     // Event listener callback
     // Note: By defining getValue outside of useEffect we ensure that it has ...
     // ... current values of hook args (as this hook only runs on mount/dismount).
-    const handler = () => setValue(getValue)
+    const handler = (): void => setValue(getValue)
     // Set a listener for each media query with above handler as callback.
     mediaQueryLists.forEach(mql => mql.addListener(handler))
     // Remove listeners on cleanup
-    return () => mediaQueryLists.forEach(mql => mql.removeListener(handler))
+    return (): void => mediaQueryLists.forEach(mql => mql.removeListener(handler))
   }, [])
 
   return value
