@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "dist/bundle.js",
   "module": "dist/bundle.esm.js",
+  "types": "dist/bundle.d.ts",
   "repository": "https://github.com/jepser/use-match-media.git",
   "author": "Jepser Bernardino <jepsersk8@gmail.com>",
   "license": "MIT",
@@ -13,11 +14,15 @@
     "@babel/preset-react": "^7.8.3",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@storybook/preset-create-react-app": "^2.1.1",
+    "@storybook/react": "^5.3.18",
     "@testing-library/react-hooks": "^3.2.1",
     "@types/jest": "^25.1.1",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
     "babel-jest": "^25.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-react-app": "^9.1.2",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
@@ -28,6 +33,7 @@
     "husky": "^4.2.1",
     "jest": "^25.1.0",
     "lint-staged": "^10.0.7",
+    "markdown-loader": "^5.1.0",
     "mq-polyfill": "^1.1.8",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -37,6 +43,7 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.2",
+    "storybook-readme": "^5.0.8",
     "typescript": "^3.7.5"
   },
   "peerDependencies": {
@@ -47,7 +54,8 @@
     "dev": "rollup -c -w",
     "build": "rollup -c --environment INCLUDE_DEPS,BUILD:production",
     "test": "jest --env=jsdom",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "storybook": "start-storybook"
   },
   "lint-staged": {
     "src/**/*.{js,ts}": [

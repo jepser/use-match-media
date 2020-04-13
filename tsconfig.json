@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "jsx": "preserve",
     "declaration": true,
+    "declarationDir": "dist",
     "pretty": true,
     "rootDir": "src",
     "sourceMap": false,
@@ -14,7 +15,7 @@
     "noImplicitReturns": true,
     "noImplicitAny": false,
     "noFallthroughCasesInSwitch": true,
-    "outDir": "lib",
+    "outDir": "dist",
     "lib": ["es2018", "dom"]
   },
   "exclude": [

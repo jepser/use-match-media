@@ -1,6 +1,7 @@
 import { useLayoutEffect, useState } from 'react'
+import { IMediaQuery, IMatchedMedia } from './types'
 
-function useMatchMedia (queries: Array<string>, defaultValues = []): Array<boolean> {
+function useMatchMedia (queries: IMediaQuery, defaultValues: IMatchedMedia = []): IMatchedMedia {
   const initialValues = defaultValues.length
     ? defaultValues
     : Array(queries.length).fill(false)
@@ -8,7 +9,7 @@ function useMatchMedia (queries: Array<string>, defaultValues = []): Array<boole
   if (typeof window === 'undefined') return initialValues
 
   const mediaQueryLists = queries.map(q => window.matchMedia(q))
-  const getValue = (): Array<boolean> => {
+  const getValue = (): IMatchedMedia => {
     // Return the value for the given queries
     const matchedQueries = mediaQueryLists.map(mql => mql.matches)
 
