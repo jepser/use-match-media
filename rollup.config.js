@@ -2,12 +2,9 @@ import commonjs from 'rollup-plugin-commonjs'
 import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-// import serve from 'rollup-plugin-serve'
-// import replace from '@rollup/plugin-replace'
+import typescript from 'rollup-plugin-typescript2'
 
 import pkg from './package.json'
-
-const isDev = !!process.env.ROLLUP_WATCH
 
 const extensions = [
   '.js', '.jsx', '.ts', '.tsx'
@@ -24,7 +21,7 @@ const commonJsConfig = {
 }
 
 const libConfig = {
-  input: 'src/index.ts',
+  input: 'src/use-match-media.ts',
   external: ['react'],
   output: [
     {
@@ -40,6 +37,11 @@ const libConfig = {
     commonjs(commonJsConfig),
     peerDepsExternal(),
     resolve({ extensions }),
+    typescript({
+      tsconfig: './tsconfig.json',
+      rollupCommonJSResolveHack: false,
+      clean: true
+    }),
     babel({
       extensions,
       exclude: 'node_modules/**'
@@ -48,28 +50,5 @@ const libConfig = {
 }
 
 const buildConfig = [libConfig]
-
-// if (isDev) {
-//   buildConfig.push({
-//     input: 'example/index.js',
-//     output: {
-//       file: 'dist/demo.js',
-//       format: 'cjs'
-//     },
-//     plugins: [
-//       commonjs(commonJsConfig),
-//       resolve(),
-//       babel({
-//         exclude: 'node_modules/**'
-//       }),
-//       replace({
-//         'process.env.NODE_ENV': JSON.stringify('production')
-//       }),
-//       serve({
-//         contentBase: ['dist', 'example']
-//       })
-//     ]
-//   })
-// }
 
 export default buildConfig

@@ -1,5 +1,5 @@
 {
-  "plugins": ["@babel/plugin-transform-typescript"],
+  // "plugins": ["@babel/plugin-transform-typescript"],
   "presets": [
     ["@babel/env", {"modules": false}],
     "@babel/preset-react"

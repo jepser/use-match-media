@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "ES2015",
     "moduleResolution": "node",
     "jsx": "preserve",
     "declaration": true,
@@ -16,6 +16,7 @@
     "noImplicitAny": false,
     "noFallthroughCasesInSwitch": true,
     "outDir": "dist",
+    "typeRoots": ["./src"],
     "lib": ["es2018", "dom"]
   },
   "exclude": [
@@ -23,7 +24,8 @@
     "lib",
     "**/__tests__/**/*",
     "**/__stories__/**/*",
-    "*.test.ts",
-    "*.test.tsx"
+    "src/*.test.ts",
+    "src/*.test.tsx",
+    "src/*.stories.tsx",
   ]
 }
