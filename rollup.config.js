@@ -49,27 +49,4 @@ const libConfig = {
 
 const buildConfig = [libConfig]
 
-// if (isDev) {
-//   buildConfig.push({
-//     input: 'example/index.js',
-//     output: {
-//       file: 'dist/demo.js',
-//       format: 'cjs'
-//     },
-//     plugins: [
-//       commonjs(commonJsConfig),
-//       resolve(),
-//       babel({
-//         exclude: 'node_modules/**'
-//       }),
-//       replace({
-//         'process.env.NODE_ENV': JSON.stringify('production')
-//       }),
-//       serve({
-//         contentBase: ['dist', 'example']
-//       })
-//     ]
-//   })
-// }
-
 export default buildConfig
