@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/bundle.js",
   "module": "dist/bundle.esm.js",
-  "types": "dist/bundle.d.ts",
+  "types": "src/types.d.ts",
   "repository": "https://github.com/jepser/use-match-media.git",
   "author": "Jepser Bernardino <jepsersk8@gmail.com>",
   "license": "MIT",
@@ -43,6 +43,7 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.2",
+    "semantic-release": "^17.0.7",
     "storybook-readme": "^5.0.8",
     "typescript": "^3.7.5"
   },

@@ -7,8 +7,8 @@ cache:
     - "node_modules"
 
 script:
-- yarn test
-- yarn build
+  - yarn test
+  - yarn build
 
 after_success:
   - yarn semantic-release
