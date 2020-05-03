@@ -1,5 +1,5 @@
 {
-  "name": "use-match-media",
+  "name": "use-match-media-hook",
   "version": "1.0.0",
   "main": "dist/bundle.js",
   "module": "dist/bundle.esm.js",
