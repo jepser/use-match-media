@@ -5,6 +5,7 @@ function useMatchMedia (queries: IMediaQuery, defaultValues: IMatchedMedia = [])
   const initialValues = defaultValues.length
     ? defaultValues
     : Array(queries.length).fill(false)
+    
 
   if (typeof window === 'undefined') return initialValues
 
